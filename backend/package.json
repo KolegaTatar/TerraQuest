@@ -4,11 +4,14 @@
   "description": "",
   "main": "src/main.ts",
   "scripts": {
-    "start": "node dist/main.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
-    "build": "tsc",
+    "start": "node dist/src/main.js",
+    "build": "npm run build:ts && npm run build:frontend",
+    "build:ts": "tsc",
+    "build:frontend": "cd ../TerraQuest && npm install && npm run build",
     "watch": "tsc --watch",
-    "test": "jest"
+    "test": "jest",
+    "dev": "ts-node-dev src/main.ts",
+    "prebuild": "mkdirp public"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +26,8 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
-    "postgres": "^3.4.5"
+    "postgres": "^3.4.5",
+    "mkdirp": "^3.0.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
