@@ -1,15 +1,13 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "npm install vite && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
     "express": "^5.1.0",
     "pg": "^8.14.1",
-    "react-transition-group": "^4.4.5",
-    "vite": "^5.1.4",
-    "@vitejs/plugin-react": "^4.2.1"
+    "react-transition-group": "^4.4.5"
   }
 }
