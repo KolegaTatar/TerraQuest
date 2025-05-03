@@ -1,6 +1,7 @@
 import "../styles/components/footer.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import LogoHeader from "../assets/terraquest.webp"
 
 const Footer = () => {
     const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -15,7 +16,7 @@ const Footer = () => {
                 <div className="f_up_1">
                     <div className="f_up_logo_section">
                         <a href="/">
-                            <img src="src/assets/terraquest.webp" alt="logo" />
+                            <img src={LogoHeader} alt="logo" />
                             <div className="f_up_text_logo">TerraQuest</div>
                         </a>
                     </div>

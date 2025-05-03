@@ -5,7 +5,7 @@ import "../styles/sites/Explore.scss";
 import HSection from "../components/h-section.tsx";
 import Places_5 from "../components/places_section_5.tsx";
 import ReviewCard from "../components/ReviewCard.tsx";
-
+import  promocja from "../assets/terraquest_baner_promocja.webp"
 type Hotel = {
     PropertyId: number;
     PropertyName: string;
@@ -191,7 +191,7 @@ function Explore() {
                 <div className="section4">
                     <HSection text1="Pobierz aplikację TerraQuest" text2="Zyskaj wyjątkowe zniżki" />
                     <div className="explore_baner">
-                        <img src="/src/assets/terraquest_baner_promocja.webp" alt="Promocja TerraQuest" />
+                        <img src={promocja} alt="Promocja TerraQuest" />
                     </div>
                 </div>
 
