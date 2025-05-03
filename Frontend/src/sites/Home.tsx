@@ -13,6 +13,27 @@ import Places_7 from "../components/places_section_7.tsx";
 import FaqSection from "../components/help_section.tsx";
 import { useNavigate } from "react-router-dom";
 
+// Importy zdjęć
+import warsawImage from "../assets/cities/warsaw.webp";
+import krakowImage from "../assets/cities/krakow.webp";
+import poznanImage from "../assets/cities/poznan.webp";
+import gdanskImage from "../assets/cities/gdansk.webp";
+import karpaczImage from "../assets/cities/karpacz.webp";
+import gdansk2Image from "../assets/cities/gdansk2.webp";
+import warsaw2Image from "../assets/cities/warsaw2.webp";
+import poznan2Image from "../assets/cities/poznan2.webp";
+import kolobrzeg2Image from "../assets/cities/kolobrzeg2.webp";
+import krakow2Image from "../assets/cities/krakow2.webp";
+import karpacz2Image from "../assets/cities/karpacz2.webp";
+import wroclaw2Image from "../assets/cities/wroclaw2.webp";
+import hotelsImage from "../assets/home_section/hotels.webp";
+import resortImage from "../assets/home_section/resort.webp";
+import apartamentImage from "../assets/home_section/apartament.webp";
+import willaImage from "../assets/home_section/willa.webp";
+import austriaImage from "../assets/home_section/austria.webp";
+import spainImage from "../assets/home_section/spain.webp";
+import treehousesImage from "../assets/home_section/treehouses.webp";
+
 type Hotel = {
     PropertyId: number;
     PropertyName: string;
@@ -106,7 +127,6 @@ function Home() {
     };
 
     const handleHotelClick = (hotel: Hotel) => {
-
         localStorage.setItem('selectedHotel', JSON.stringify(hotel));
         navigate(`/product/${hotel.PropertyId}`);
         window.scrollTo(0, 0);
@@ -166,14 +186,14 @@ function Home() {
                         <Places_1
                             text1={"Warszawa"}
                             text2={""}
-                            backgroundImage={'/src/assets/cities/warsaw.webp'}
+                            backgroundImage={warsawImage}
                             link_to="/explore"
                             onClick={() => handleCityClick("Warszawa")}
                         />
                         <Places_1
                             text1={"Kraków"}
                             text2={""}
-                            backgroundImage={'/src/assets/cities/krakow.webp'}
+                            backgroundImage={krakowImage}
                             link_to="/explore"
                             onClick={() => handleCityClick("Kraków")}
                         />
@@ -182,21 +202,21 @@ function Home() {
                         <Places_2
                             text1={"Poznań"}
                             text2={""}
-                            backgroundImage={'/src/assets/cities/poznan.webp'}
+                            backgroundImage={poznanImage}
                             link_to="/explore"
                             onClick={() => handleCityClick("Poznań")}
                         />
                         <Places_2
                             text1={"Gdańsk"}
                             text2={""}
-                            backgroundImage={'/src/assets/cities/gdansk.webp'}
+                            backgroundImage={gdanskImage}
                             link_to="/explore"
                             onClick={() => handleCityClick("Gdańsk")}
                         />
                         <Places_2
                             text1={"Karpacz"}
                             text2={""}
-                            backgroundImage={'/src/assets/cities/karpacz.webp'}
+                            backgroundImage={karpaczImage}
                             link_to="/explore"
                             onClick={() => handleCityClick("Karpacz")}
                         />
@@ -207,22 +227,22 @@ function Home() {
                               text2={""}></HSection>
                     <div className="places_section_3">
                         <Places_3
-                            link={"/src/assets/home_section/hotels.webp"}
+                            link={hotelsImage}
                             text2={"Hotele"}
                             link_to="/explore"
                         />
                         <Places_3
-                            link={"/src/assets/home_section/resort.webp"}
+                            link={resortImage}
                             text2={"Ośrodki wypoczynkowe"}
                             link_to="/explore"
                         />
                         <Places_3
-                            link={"/src/assets/home_section/apartament.webp"}
+                            link={apartamentImage}
                             text2={"Apartamenty"}
                             link_to="/explore"
                         />
                         <Places_3
-                            link={"/src/assets/home_section/willa.webp"}
+                            link={willaImage}
                             text2={"Wille"}
                             link_to="/explore"
                         />
@@ -233,43 +253,43 @@ function Home() {
                               text2={"Te popularne miejsca mają wiele do zaoferowania"}></HSection>
                     <div className="places_section_4">
                         <Places_4
-                            link={"/src/assets/cities/gdansk2.webp"}
+                            link={gdansk2Image}
                             text1={"Gdańsk"}
                             text2={getRandomPlacesNumber()}
                             link_to="/explore"
                             onClick={() => handleCityClick("Gdańsk")} />
                         <Places_4
-                            link={"/src/assets/cities/warsaw2.webp"}
+                            link={warsaw2Image}
                             text1={"Warszawa"}
                             text2={getRandomPlacesNumber()}
                             link_to="/explore"
                             onClick={() => handleCityClick("Warszawa")} />
                         <Places_4
-                            link={"/src/assets/cities/poznan2.webp"}
+                            link={poznan2Image}
                             text1={"Poznań"}
                             text2={getRandomPlacesNumber()}
                             link_to="/explore"
                             onClick={() => handleCityClick("Poznań")} />
                         <Places_4
-                            link={"/src/assets/cities/kolobrzeg2.webp"}
+                            link={kolobrzeg2Image}
                             text1={"Kołobrzeg"}
                             text2={getRandomPlacesNumber()}
                             link_to="/explore"
                             onClick={() => handleCityClick("Kołobrzeg")} />
                         <Places_4
-                            link={"/src/assets/cities/krakow2.webp"}
+                            link={krakow2Image}
                             text1={"Kraków"}
                             text2={getRandomPlacesNumber()}
                             link_to="/explore"
                             onClick={() => handleCityClick("Kraków")} />
                         <Places_4
-                            link={"/src/assets/cities/karpacz2.webp"}
+                            link={karpacz2Image}
                             text1={"Karpacz"}
                             text2={getRandomPlacesNumber()}
                             link_to="/explore"
                             onClick={() => handleCityClick("Karpacz")} />
                         <Places_4
-                            link={"/src/assets/cities/wroclaw2.webp"}
+                            link={wroclaw2Image}
                             text1={"Wrocław"}
                             text2={getRandomPlacesNumber()}
                             link_to="/explore"
@@ -328,19 +348,18 @@ function Home() {
 
                     <div className="places_section_6">
                         <div className="inspiration_big">
-                            <img
-                                src="/src/assets/home_section/austria.webp" />
+                            <img src={austriaImage} alt="Domy wakacyjne w Austrii" />
                             <h4>{"6 niepowtarzalnych domów wakacyjnych w Austrii"}</h4>
                             <h4 className="descr_h4">{"Wakacje z wiekszą ekipą? Trafiłeś idealnie!"}</h4>
                         </div>
                         <div className="other_palce">
                             <Places_6
-                                link={"/src/assets/home_section/spain.webp"}
+                                link={spainImage}
                                 text1={"Nudzisz się w jednym miejscu? To może podróż przez Hiszpanie?"}
                                 text2={"6 dni, 4 hotele i brak nudy. Idealne dla wszystkich poszukiwaczy przygód."}
                                 link_to="/explore" />
                             <Places_6
-                                link={"/src/assets/home_section/treehouses.webp"}
+                                link={treehousesImage}
                                 text1={"Najlepsze domki na drzewie na świecie"}
                                 text2={"Zwykłe hotele są dla ciebie już nudne? To może noc w łonie natury."}
                                 link_to="/explore" />
