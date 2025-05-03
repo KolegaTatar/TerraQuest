@@ -7,11 +7,12 @@
     "start": "node dist/src/main.js",
     "build": "npm run build:ts && npm run build:frontend",
     "build:ts": "tsc",
-    "build:frontend": "cd ../TerraQuest && npm install && npm run build",
     "watch": "tsc --watch",
     "test": "jest",
     "dev": "ts-node-dev src/main.ts",
-    "prebuild": "mkdirp public"
+    "prebuild": "cd ../TerraQuest && npm install",
+    "build:frontend": "cd ../TerraQuest && npm run build"
+  }
   },
   "author": "",
   "license": "ISC",
