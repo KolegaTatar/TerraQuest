@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import Update_Alert from "../components/Update_Alert";
 import axios from "axios";
 import Alert from "../components/Alert.tsx";
+import User_No from "../assets/user_no.webp"
 
 interface Booking {
     id: number;
@@ -229,7 +230,7 @@ function User() {
         <main className="user">
             <div className="container">
                 <div className="user-card">
-                    <img src="src/assets/user_no.webp" alt="Obraz profilu" className="user-avatar"/>
+                    <img src={User_No} alt="Obraz profilu" className="user-avatar"/>
                     <h2>{(userFirstName && userLastName) ? ` ${userFirstName} ${userLastName}` : "Brak nazwy użytkownika"}</h2>
                     <p className="email">({userEmail})</p>
                     <h6>Aby zmienić lub ustawić nazwę użytkownika kliknij w <b>Aktualizacja profilu</b></h6>

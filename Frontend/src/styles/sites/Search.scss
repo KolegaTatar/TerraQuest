@@ -5,7 +5,7 @@
 
 
   .section1 {
-    background-image: url("/src/assets/baner_search.webp");
+    background-image: url("../../assets/baner_search.webp");
     background-size: 100%;
     background-position-y: -10rem;
     display: flex;
@@ -92,7 +92,7 @@
 }
 
 .search_header{
-  background-image: url('/src/assets/miesiace.webp');
+  background-image: url('../../assets/miesiace.webp');
   background-size: cover;
   height: 15.688rem;
   background-position: center;
@@ -341,7 +341,7 @@
   }
 
   .search_header{
-    background-image: url('/src/assets/miesiace.webp');
+    background-image: url('../../assets/miesiace.webp');
     background-size: cover;
     height: 15.688rem;
     background-position: center;

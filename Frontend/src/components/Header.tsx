@@ -5,6 +5,7 @@ import Logo from "./logo.tsx";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.tsx";
 
+
 const Header = () => {
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
