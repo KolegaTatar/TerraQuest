@@ -10,8 +10,8 @@
     "watch": "tsc --watch",
     "test": "jest",
     "dev": "ts-node-dev src/main.ts",
-    "prebuild": "cd ../TerraQuest && npm install",
-    "build:frontend": "cd ../TerraQuest && npm run build"
+    "build:frontend": "cd ../TerraQuest && npm install --force && npm run build",
+    "prebuild": "mkdirp public || true"
   }
   },
   "author": "",
