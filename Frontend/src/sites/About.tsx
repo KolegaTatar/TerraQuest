@@ -1,5 +1,6 @@
 import "../styles/sites/About.scss"
 import Button from "../components/Button";
+import kompasImg from "../assets/kompas.webp";
 
 function App() {
     return(
@@ -31,7 +32,7 @@ function App() {
                         </ul>
                 </div>
                 <div className="image">
-                    <img src="src/assets/kompas.webp" alt="Kompas"/>
+                    <img src={kompasImg} alt="Kompas"/>
                 </div>
             </div>
             <div className="info">
