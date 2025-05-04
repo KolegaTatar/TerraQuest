@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
     'http://localhost:5173',
     'http://localhost:3000',
-    'https://terraquest-frontend.onrender.com',
+    'https://terra-quest-delta.vercel.app',
     process.env.FRONTEND_URL
 ].filter(Boolean) as string[];
 
