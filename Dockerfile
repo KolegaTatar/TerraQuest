@@ -1,22 +1,22 @@
 # Użyj oficjalnego obrazu Node.js
 FROM node:18 AS backend
 
-# Ustawienie katalogu roboczego w kontenerze
+# Ustawienie katalogu roboczego
 WORKDIR /app/backend
 
 # Kopiowanie pliku package.json z katalogu backend
-COPY backend/package.json ./ 
+COPY backend/package.json ./
 
 # Kopiowanie pliku package-lock.json z głównego katalogu projektu
 COPY package-lock.json ./
 
-# Instalowanie wszystkich zależności, w tym npm i devDependencies
+# Zainstalowanie wszystkich zależności, w tym devDependencies
 RUN npm install --legacy-peer-deps
 
-# Instalowanie TypeScript w projekcie, jeżeli nie jest jeszcze zainstalowany
+# Instalacja TypeScript (upewniamy się, że jest dostępny)
 RUN npm install typescript --save-dev
 
-# Kopiowanie pozostałych plików źródłowych z katalogu backend do kontenera
+# Kopiowanie pozostałych plików źródłowych z katalogu backend
 COPY backend ./
 
 # Sprawdzamy kompilację TypeScript przed uruchomieniem
