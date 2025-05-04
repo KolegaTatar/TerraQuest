@@ -1,33 +1,29 @@
-# Użyj oficjalnego obrazu Node.js
-FROM node:18 AS backend
+FROM node:18
 
-# Ustawienie katalogu roboczego
-WORKDIR /app
+# 1. Praca w katalogu backendu
+WORKDIR /app/backend
 
-# Kopiowanie plików package.json i package-lock.json
-COPY package*.json ./
+# 2. Kopiowanie tylko plików potrzebnych do instalacji
+COPY backend/package.json backend/package-lock.json ./
 
-# Instalowanie wszystkich zależności w katalogu lokalnym
-RUN npm install --legacy-peer-deps
+# 3. Instalacja zależności
+RUN npm install -g npm@8.19.4 && \
+    npm install --include=dev --legacy-peer-deps
 
-# Instalowanie TypeScript
-RUN npm install typescript --save-dev
-
-# Kopiowanie pozostałych plików źródłowych do kontenera
+# 4. Kopiowanie reszty kodu
 COPY . .
 
-# Sprawdzenie wersji npm i typescript (pomaga wykryć brakujące zależności)
-RUN npm --version
-RUN npx tsc --version
+# 5. Kompilacja TypeScript z jawnymi flagami
+RUN npx tsc --project backend/tsconfig.json \
+    --esModuleInterop true \
+    --skipLibCheck true \
+    --strict true \
+    --outDir ./dist
 
-# Sprawdzamy kompilację TypeScript przed uruchomieniem
-RUN npx tsc --noEmit
+# 6. Kopiowanie dodatkowych folderów
+RUN cp -r backend/src/other backend/dist/other && \
+    cp -r backend/src/routes backend/dist/routes
 
-# Uruchomienie kompilacji TypeScript
-RUN npm run build
-
-# Ustawienie portu 5000 (zdefiniowanego w backendzie)
+# 7. Uruchomienie aplikacji
 EXPOSE 5000
-
-# Uruchomienie aplikacji
-CMD ["npm", "start"]
+CMD ["node", "backend/dist/main.js"]
