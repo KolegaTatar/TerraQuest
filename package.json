@@ -9,5 +9,8 @@
     "express": "^5.1.0",
     "pg": "^8.14.1",
     "react-transition-group": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/morgan": "^1.9.9"
   }
 }
