@@ -19,6 +19,7 @@ import helpRouter from './routes/help1';
 dotenv.config();
 const isProduction = process.env.NODE_ENV === 'production';
 
+
 // Inicjalizacja Express
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -44,6 +45,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
+app.use(express.static(path.join(__dirname, '../../public')));
 // Middleware
 app.use(morgan(isProduction ? 'combined' : 'dev'));
 app.use(express.json());
@@ -78,23 +80,7 @@ app.get('/health', (req: Request, res: Response) => {
 
 // Główny endpoint
 app.get('/', (req: Request, res: Response) => {
-    res.send(`
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>TerraQuest Backend</title>
-      </head>
-      <body>
-        <h1>✅ TerraQuest Backend is running</h1>
-        <h2>Environment: ${process.env.NODE_ENV || 'development'}</h2>
-        <ul>
-          <li><a href="/hotels">/hotels</a> (legacy)</li>
-          <li><a href="/api/hotels">/api/hotels</a></li>
-          <li><a href="/health">/health</a></li>
-        </ul>
-      </body>
-    </html>
-  `);
+    res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
 // Obsługa błędów 404
