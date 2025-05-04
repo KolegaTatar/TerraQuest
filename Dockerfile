@@ -10,6 +10,9 @@ COPY package*.json ./
 # Instalowanie wszystkich zależności w katalogu lokalnym
 RUN npm install --legacy-peer-deps
 
+# Instalowanie TypeScript
+RUN npm install typescript --save-dev
+
 # Kopiowanie pozostałych plików źródłowych do kontenera
 COPY . .
 
@@ -19,7 +22,7 @@ RUN npm --version
 # Sprawdzenie, czy vite jest dostępne (pomaga wykryć brakujące zależności)
 RUN npx vite --version
 
-# Sprawdzamy kompilację TypeScript przed uruchomieniem
+# Uruchomienie kompilacji TypeScript
 RUN npx tsc --noEmit
 
 # Uruchomienie kompilacji TypeScript
