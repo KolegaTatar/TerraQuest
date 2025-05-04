@@ -10,17 +10,14 @@ COPY backend/package.json ./
 # Kopiowanie pliku package-lock.json z głównego katalogu projektu
 COPY package-lock.json ./
 
-# Aktualizacja npm do najnowszej wersji (np. 11.3.0)
-RUN npm install -g npm@11.3.0
-
-# Instalowanie wszystkich zależności
+# Instalowanie wszystkich zależności, w tym npm i devDependencies
 RUN npm install --legacy-peer-deps
+
+# Instalowanie TypeScript w projekcie, jeżeli nie jest jeszcze zainstalowany
+RUN npm install typescript --save-dev
 
 # Kopiowanie pozostałych plików źródłowych z katalogu backend do kontenera
 COPY backend ./
-
-# Instalowanie TypeScript, jeśli nie jest zainstalowany
-RUN npm install typescript --save-dev
 
 # Sprawdzamy kompilację TypeScript przed uruchomieniem
 RUN npx tsc --noEmit
