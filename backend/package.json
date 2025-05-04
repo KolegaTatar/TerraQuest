@@ -2,14 +2,14 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.ts",
+  "main": "disc/main.ts",
   "scripts": {
-    "start": "node main.js",
+    "start": "node dist/main.js",
     "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
-    "build": "tsc",
-    "watch": "tsc --watch",
+    "build": "tsc && cp -r src/other dist/ && cp -r src/routes dist/",
+    "prestart": "npm run build",
     "test": "jest",
-    "railway": "node index.js"
+    "railway": "npm start"
   },
   "author": "",
   "license": "ISC",
