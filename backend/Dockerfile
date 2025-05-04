@@ -10,7 +10,7 @@ COPY package*.json ./
 # Instalowanie zależności
 RUN npm install
 
-# Etap 1: Budowanie aplikacji frontendowej
+# Etap 1: Budowanie aplikacji frontendowej (jeśli jest)
 FROM base AS frontend
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
@@ -25,7 +25,7 @@ COPY backend/package*.json ./
 RUN npm install
 COPY backend/ .
 
-# Kopiowanie zbudowanego frontendu do katalogu public w backendzie
+# Kopiowanie zbudowanego frontendu do katalogu public w backendzie (jeśli dotyczy)
 COPY --from=frontend /app/frontend/build ./public
 
 # Eksponowanie portu, jeśli backend działa na porcie 3000
