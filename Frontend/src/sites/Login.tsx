@@ -17,7 +17,7 @@ function Login() {
         setLoading(true);
 
         try {
-            const res = await fetch('https://terraquest-backend.onrender.com/api/auth/login', {
+            const res = await fetch('https://terraquest-production.up.railway.app/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',

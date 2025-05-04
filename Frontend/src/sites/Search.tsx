@@ -49,7 +49,7 @@ function Search() {
     const fetchHotels = async (city: string) => {
         try {
             setLoading(true);
-            const res = await axios.get(`https://terraquest-backend.onrender.com/api/hotels?city=${city}`);
+            const res = await axios.get(`https://terraquest-production.up.railway.app/api/hotels?city=${city}`);
             if (Array.isArray(res.data)) {
                 setHotels(res.data);
                 setFilteredHotels(res.data);

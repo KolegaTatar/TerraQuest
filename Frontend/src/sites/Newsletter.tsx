@@ -58,7 +58,7 @@ function Newsletter() {
                 return;
             }
 
-            const response = await fetch('https://terraquest-backend.onrender.com/api/newsletter', {
+            const response = await fetch('https://terraquest-production.up.railway.app/api/newsletter', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

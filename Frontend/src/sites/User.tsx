@@ -105,7 +105,7 @@ function User() {
 
     const fetchUserData = async () => {
         try {
-            const response = await axios.get('https://terraquest-backend.onrender.com/api/auth/user', {
+            const response = await axios.get('https://terraquest-production.up.railway.app/api/auth/user', {
                 withCredentials: true
             });
 
@@ -131,7 +131,7 @@ function User() {
         }
 
         try {
-            const response = await axios.get(`http://localhost:5000/api/bookings?userId=${userId}`, {
+            const response = await axios.get(`https://terraquest-production.up.railway.app/api/bookings?userId=${userId}`, {
                 withCredentials: true,
             });
             setBookings(response.data);

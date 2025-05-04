@@ -19,7 +19,7 @@ function Register() {
         e.preventDefault();
 
         try {
-            const res = await fetch('https://terraquest-backend.onrender.com//api/auth/register', {
+            const res = await fetch('https://terraquest-production.up.railway.app/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ function Register() {
 
             if (res.ok) {
                 if (autoLogin) {
-                    const loginRes = await fetch('https://terraquest-backend.onrender.com/api/auth/login', {
+                    const loginRes = await fetch('https://terraquest-production.up.railway.app/api/auth/login', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
