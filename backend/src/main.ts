@@ -29,7 +29,7 @@ const allowedOrigins = [
     'http://localhost:5173',
     'http://localhost:3000',
     'https://terra-quest-delta.vercel.app',
-    process.env.FRONTEND_URL
+    process.env.FRONTEND_URL || 'https://terraquest-production.up.railway.app'
 ].filter(Boolean) as string[];
 
 app.use(cors({
