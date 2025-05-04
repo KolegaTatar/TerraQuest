@@ -9,7 +9,7 @@
     "prestart": "npm run build",
     "test": "jest",
     "railway": "npm run build && npm start",
-    "build": "tsc ",
+    "build": "tsc && ts-node-dev",
     "postinstall": "npm run build"
   },
   "author": "",
