@@ -7,11 +7,11 @@ const localImages = [
     'https://terraquest-production.up.railway.app/img/u1k.webp',
     'https://terraquest-production.up.railway.app/img/u2m.webp',
     'https://terraquest-production.up.railway.app/img/u3m.webp',
-    'https://terraquest-production.up.railway.app//u4k.webp',
+    'https://terraquest-production.up.railway.app/img/u4k.webp',
     'https://terraquest-production.up.railway.app/img/u5m.webp',
     'https://terraquest-production.up.railway.app/img/u6k.webp',
     'https://terraquest-production.up.railway.app/img/u7k.webp',
-    'https://terraquest-production.up.railway.appimg/u8m.webp',
+    'https://terraquest-production.up.railway.app/img/u8m.webp',
     'https://terraquest-production.up.railway.app/img/u9m.webp',
     'https://terraquest-production.up.railway.app/img/u10k.webp',
 ];
