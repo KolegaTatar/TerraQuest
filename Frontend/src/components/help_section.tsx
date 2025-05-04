@@ -47,7 +47,7 @@ const FaqSection = ({ searchTerm = "" }: FaqSectionProps) => {
     useEffect(() => {
         const fetchFaqs = async () => {
             try {
-                const response = await fetch('https://terraquest-backend.onrender.com//api/help1/faq');
+                const response = await fetch('https://terraquest-production.up.railway.app/api/help1/faq');
 
                 if (!response.ok) {
                     throw new Error(`Błąd serwera: ${response.status}`);
