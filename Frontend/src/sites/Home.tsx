@@ -85,7 +85,7 @@ function Home() {
     useEffect(() => {
         const fetchHotels = async () => {
             try {
-                const res = await axios.get("https://terraquest-backend.onrender.com/api/hotels?city=tokio");
+                const res = await axios.get("https://terraquest-production.up.railway.app/api/hotels?city=tokio");
                 if (Array.isArray(res.data)) {
                     const hotelsWithCurrency = res.data.map(hotel => ({
                         ...hotel,
