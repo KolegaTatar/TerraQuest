@@ -4,11 +4,12 @@
   "description": "",
   "main": "src/main.ts",
   "scripts": {
-    "start": "node dist/main.js",
+    "start": "node main.js",
     "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
     "build": "tsc",
     "watch": "tsc --watch",
-    "test": "jest"
+    "test": "jest",
+    "railway": "node index.js"
   },
   "author": "",
   "license": "ISC",

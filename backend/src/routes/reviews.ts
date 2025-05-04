@@ -4,16 +4,16 @@ import { supabase } from "../supabaseClient";
 const router = express.Router();
 
 const localImages = [
-    'http://localhost:5000/img/u1k.webp',
-    'http://localhost:5000/img/u2m.webp',
-    'http://localhost:5000/img/u3m.webp',
-    'http://localhost:5000/img/u4k.webp',
-    'http://localhost:5000/img/u5m.webp',
-    'http://localhost:5000/img/u6k.webp',
-    'http://localhost:5000/img/u7k.webp',
-    'http://localhost:5000/img/u8m.webp',
-    'http://localhost:5000/img/u9m.webp',
-    'http://localhost:5000/img/u10k.webp',
+    'https://terraquest-backend.onrender.com/img/u1k.webp',
+    'https://terraquest-backend.onrender.com/img/u2m.webp',
+    'https://terraquest-backend.onrender.com/img/u3m.webp',
+    'https://terraquest-backend.onrender.com/img/u4k.webp',
+    'https://terraquest-backend.onrender.com/img/u5m.webp',
+    'https://terraquest-backend.onrender.com/img/u6k.webp',
+    'https://terraquest-backend.onrender.com/img/u7k.webp',
+    'https://terraquest-backend.onrender.com/img/u8m.webp',
+    'https://terraquest-backend.onrender.com/img/u9m.webp',
+    'https://terraquest-backend.onrender.com/img/u10k.webp',
 ];
 
 

@@ -6,6 +6,7 @@ import HSection from "../components/h-section.tsx";
 import Places_5 from "../components/places_section_5.tsx";
 import ReviewCard from "../components/ReviewCard.tsx";
 import  promocja from "../assets/terraquest_baner_promocja.webp"
+
 type Hotel = {
     PropertyId: number;
     PropertyName: string;
