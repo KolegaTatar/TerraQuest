@@ -4,16 +4,16 @@ import { supabase } from "../supabaseClient";
 const router = express.Router();
 
 const localImages = [
-    'https://terraquest-backend.onrender.com/img/u1k.webp',
-    'https://terraquest-backend.onrender.com/img/u2m.webp',
-    'https://terraquest-backend.onrender.com/img/u3m.webp',
-    'https://terraquest-backend.onrender.com/img/u4k.webp',
-    'https://terraquest-backend.onrender.com/img/u5m.webp',
-    'https://terraquest-backend.onrender.com/img/u6k.webp',
-    'https://terraquest-backend.onrender.com/img/u7k.webp',
-    'https://terraquest-backend.onrender.com/img/u8m.webp',
-    'https://terraquest-backend.onrender.com/img/u9m.webp',
-    'https://terraquest-backend.onrender.com/img/u10k.webp',
+    'https://terraquest-production.up.railway.app/img/u1k.webp',
+    'https://terraquest-production.up.railway.app//img/u2m.webp',
+    'https://terraquest-production.up.railway.app//img/u3m.webp',
+    'https://terraquest-production.up.railway.app//u4k.webp',
+    'https://terraquest-production.up.railway.app/img/u5m.webp',
+    'https://terraquest-production.up.railway.app//img/u6k.webp',
+    'https://terraquest-production.up.railway.app//img/u7k.webp',
+    'https://terraquest-production.up.railway.app/img/u8m.webp',
+    'https://terraquest-production.up.railway.app//img/u9m.webp',
+    'https://terraquest-production.up.railway.app//img/u10k.webp',
 ];
 
 

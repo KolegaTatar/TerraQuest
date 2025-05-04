@@ -51,6 +51,9 @@ function User() {
         USD: 4.3,
         EUR: 4.5,
     });
+
+    const apiUrl = 'https://terraquest-production.up.railway.app';  // Stały URL API
+
     useEffect(() => {
         let isMounted = true;
 
@@ -71,10 +74,7 @@ function User() {
                 }
 
                 if (isMounted) {
-                    await Promise.all([
-                        fetchUserBookings(),
-                        fetchUserData()
-                    ]);
+                    await Promise.all([fetchUserBookings(), fetchUserData()]);
                 }
             } catch (error) {
                 console.error("Błąd inicjalizacji:", error);
@@ -105,7 +105,7 @@ function User() {
 
     const fetchUserData = async () => {
         try {
-            const response = await axios.get('https://terraquest-production.up.railway.app/api/auth/user', {
+            const response = await axios.get(`${apiUrl}/api/auth/user`, {
                 withCredentials: true
             });
 
@@ -131,7 +131,7 @@ function User() {
         }
 
         try {
-            const response = await axios.get(`https://terraquest-production.up.railway.app/api/bookings?userId=${userId}`, {
+            const response = await axios.get(`${apiUrl}/api/bookings?userId=${userId}`, {
                 withCredentials: true,
             });
             setBookings(response.data);
@@ -197,7 +197,7 @@ function User() {
 
         try {
             setShowConfirmAlert(false);
-            await axios.delete(`https://terraquest-backend.onrender.com/api/bookings/${currentBookingToDelete}`, {
+            await axios.delete(`${apiUrl}/api/bookings/${currentBookingToDelete}`, {
                 withCredentials: true
             });
             setShowConfirmAlert(false);
@@ -280,12 +280,12 @@ function User() {
                                                 </h3>
                                                 <p className="booking-desc"> ({booking.PropertyAddress})</p>
                                                 <p className="info_sec_booking">
-                                <span className="booking_price">
-                                    <del>{calculatePrice(booking.ReferencePrice, booking.ReferencePriceCurrency, 0)}</del>
-                                    <span className="new_price_booking">
-                                        {calculatePrice(booking.ReferencePrice, booking.ReferencePriceCurrency, booking.MaxDiscountPercent)}
-                                    </span>
-                                </span>
+                                                    <span className="booking_price">
+                                                        <del>{calculatePrice(booking.ReferencePrice, booking.ReferencePriceCurrency, 0)}</del>
+                                                        <span className="new_price_booking">
+                                                            {calculatePrice(booking.ReferencePrice, booking.ReferencePriceCurrency, booking.MaxDiscountPercent)}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
                                             <div className="icons_booking">

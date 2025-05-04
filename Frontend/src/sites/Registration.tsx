@@ -15,30 +15,32 @@ function Register() {
     const navigate = useNavigate();
     const { login } = useAuth();
 
+    const apiUrl = 'https://terraquest-production.up.railway.app';  // Stały URL API
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {
-            const res = await fetch('https://terraquest-production.up.railway.app/api/auth/register', {
+            const res = await fetch(`${apiUrl}/api/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 credentials: 'include',
-                body: JSON.stringify({email, password}),
+                body: JSON.stringify({ email, password }),
             });
 
             const data = await res.json();
 
             if (res.ok) {
                 if (autoLogin) {
-                    const loginRes = await fetch('https://terraquest-production.up.railway.app/api/auth/login', {
+                    const loginRes = await fetch(`${apiUrl}/api/auth/login`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         credentials: 'include',
-                        body: JSON.stringify({email, password}),
+                        body: JSON.stringify({ email, password }),
                     });
 
                     if (loginRes.ok) {
@@ -54,14 +56,14 @@ function Register() {
                 }
             }
             else {
-                const errorMessage = data.message || 'User with this email already exists';
+                const errorMessage = data.message || 'Użytkownik o tym emailu już istnieje';
                 setErrorMessage(errorMessage);
                 setError(true);
             }
         }
-        catch(err){
+        catch (err) {
             console.error(err);
-            setError(true)
+            setError(true);
             setErrorMessage('Coś poszło nie tak. Spróbuj ponownie.');
         }
     };
@@ -94,7 +96,12 @@ function Register() {
                     />
 
                     <div className="checkbox-container">
-                        <input type="checkbox" id="stay-logged" checked={autoLogin} onChange={(e) => setAutoLogin(e.target.checked)}/>
+                        <input
+                            type="checkbox"
+                            id="stay-logged"
+                            checked={autoLogin}
+                            onChange={(e) => setAutoLogin(e.target.checked)}
+                        />
                         <label htmlFor="stay-logged">
                             <p>Zaloguj automatycznie</p>
                         </label>
