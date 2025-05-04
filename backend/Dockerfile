@@ -1,26 +1,10 @@
-# Użyj oficjalnego obrazu Node.js
-FROM node:18 AS backend
+FROM node:18
 
-# Ustawienie katalogu roboczego
 WORKDIR /app
-
-# Kopiowanie plików package.json i package-lock.json
 COPY package*.json ./
-
-# Instalowanie wszystkich zależności, w tym devDependencies
-RUN npm install --legacy-peer-deps
-
-# Kopiowanie pozostałych plików źródłowych do kontenera
+RUN npm install --include=dev  # instaluje devDependencies (TypeScript)
 COPY . .
+RUN npm run build  # kompiluje TS → JS
 
-# Sprawdzenie wersji npm (opcjonalne)
-RUN npm --version
-
-# Uruchomienie kompilacji TypeScript
-RUN echo "Uruchamianie kompilacji..." && npm run build
-
-# Ustawienie portu 5000 (zdefiniowanego w backendzie)
-EXPOSE 5000
-
-# Uruchomienie aplikacji
+EXPOSE 3000
 CMD ["npm", "start"]
