@@ -16,13 +16,11 @@ RUN npm install typescript --save-dev
 # Kopiowanie pozostałych plików źródłowych do kontenera
 COPY . .
 
-# Sprawdzenie wersji npm (można usunąć, jeśli nie jest to konieczne)
+# Sprawdzenie wersji npm i typescript (pomaga wykryć brakujące zależności)
 RUN npm --version
+RUN npx tsc --version
 
-# Sprawdzenie, czy vite jest dostępne (pomaga wykryć brakujące zależności)
-RUN npx vite --version
-
-# Uruchomienie kompilacji TypeScript
+# Sprawdzamy kompilację TypeScript przed uruchomieniem
 RUN npx tsc --noEmit
 
 # Uruchomienie kompilacji TypeScript
