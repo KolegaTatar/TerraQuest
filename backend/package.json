@@ -9,7 +9,7 @@
     "build": "tsc && cp -r src/other dist/ && cp -r src/routes dist/",
     "prestart": "npm run build",
     "test": "jest",
-    "railway": "npm start"
+    "railway": "npm run build && npm start"
   },
   "author": "",
   "license": "ISC",
