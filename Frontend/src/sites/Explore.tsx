@@ -82,7 +82,7 @@ function Explore() {
     useEffect(() => {
         const fetchHotels = async () => {
             try {
-                const res = await axios.get("https://terraquest-backend.onrender.com//api/hotels?city=paris");
+                const res = await axios.get("https://terraquest-backend.onrender.com/api/hotels?city=paris");
                 if (Array.isArray(res.data)) setHotels(res.data);
             } catch (error) {
                 console.error("❌ Błąd ładowania hoteli:", error);

@@ -49,7 +49,7 @@ function Product() {
             };
 
             const response = await axios.post(
-                "https://terraquest-backend.onrender.com//api/reservations",
+                "https://terraquest-backend.onrender.com/api/reservations",
                 reservationData,
                 { withCredentials: true }
             );
@@ -65,7 +65,7 @@ function Product() {
     useEffect(() => {
         const fetchReview = async () => {
             try {
-                const res = await axios.get("https://terraquest-backend.onrender.com//api/reviews");
+                const res = await axios.get("https://terraquest-backend.onrender.com/api/reviews");
                 if (Array.isArray(res.data)) setReviews(res.data);
             } catch (error) {
                 console.error("❌ Błąd ładowania recenzji:", error);

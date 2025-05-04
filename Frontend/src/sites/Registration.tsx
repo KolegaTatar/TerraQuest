@@ -32,7 +32,7 @@ function Register() {
 
             if (res.ok) {
                 if (autoLogin) {
-                    const loginRes = await fetch('https://terraquest-backend.onrender.com//api/auth/login', {
+                    const loginRes = await fetch('https://terraquest-backend.onrender.com/api/auth/login', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

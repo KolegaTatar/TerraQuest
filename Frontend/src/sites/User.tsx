@@ -105,7 +105,7 @@ function User() {
 
     const fetchUserData = async () => {
         try {
-            const response = await axios.get('/api/auth/user', {
+            const response = await axios.get('https://terraquest-backend.onrender.com/api/auth/user', {
                 withCredentials: true
             });
 
