@@ -92,7 +92,7 @@ function Explore() {
 
         const fetchReview = async () => {
             try {
-                const res = await axios.get("https://terraquest-production.up.railway.app//api/reviews");
+                const res = await axios.get("https://terraquest-production.up.railway.app/api/reviews");
                 if (Array.isArray(res.data)) setReviews(res.data);
             } catch (error) {
                 console.error("❌ Błąd ładowania recenzji:", error);

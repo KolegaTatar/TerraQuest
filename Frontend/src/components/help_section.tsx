@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import {Link, useLocation } from "react-router-dom";
 import "../styles/components/help_section.scss";
+
 
 type FaqProps = {
     title: string;
@@ -113,9 +114,9 @@ const FaqSection = ({ searchTerm = "" }: FaqSectionProps) => {
                                 {showAll ? "Mniej" : "Więcej"}
                             </button>
                         ) : (
-                            <a className="faq-more" href="/help">
+                            <Link className="faq-more" to="/help">
                                 Więcej
-                            </a>
+                            </Link>
                         )}
                     </p>
                 </>

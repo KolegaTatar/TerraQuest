@@ -1,7 +1,7 @@
 import "../styles/components/footer.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import LogoHeader from "../assets/terraquest.webp"
+import LogoHeader from "../assets/terraquest.webp";
 
 const Footer = () => {
     const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -15,10 +15,10 @@ const Footer = () => {
             <div className="footer_up">
                 <div className="f_up_1">
                     <div className="f_up_logo_section">
-                        <a href="/">
+                        <Link to="/">
                             <img src={LogoHeader} alt="logo" />
                             <div className="f_up_text_logo">TerraQuest</div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="f_up_icon_section">
                     </div>
@@ -30,7 +30,7 @@ const Footer = () => {
                 >
                     <p className="footer_p">Odkryj</p>
                     <ul>
-                        <li><a href="/explore">Planer podróży</a></li>
+                        <li><Link to="/explore">Planer podróży</Link></li>
                         <li><Link to="/weather">Pogoda</Link></li>
                         <li><Link to="/newsletter">Newsletter</Link></li>
                         <li><a href="#">Specjalne oferty</a></li>
@@ -43,10 +43,10 @@ const Footer = () => {
                 >
                     <p className="footer_p">Nasze produkty</p>
                     <ul>
-                        <li><a href="https://github.com/BergFilip/TerraQuest_web" target="_blank">Website App</a></li>
-                        <li><a href="https://github.com/KolegaTatar/TerraQuest_mobile" target="_blank">Mobile App</a></li>
-                        <li><a href="https://github.com/KolegaTatar/SkyVision_desktop" target="_blank">Desktop App</a></li>
-                        <li><a href="https://www.figma.com/proto/VAEeMmg1rGRkZhTuEwuFnK/Platforma-do-Planowania-Podr%C3%B3%C5%BCy-i-Rezerwacji-TerraQuest?node-id=0-1&p=f&t=tY3MevuZcr4uMUzy-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=354%3A3719&show-proto-sidebar=1" target="_blank">Project</a></li>
+                        <li><a href="https://github.com/BergFilip/TerraQuest_web" target="_blank" rel="noopener noreferrer">Website App</a></li>
+                        <li><a href="https://github.com/KolegaTatar/TerraQuest_mobile" target="_blank" rel="noopener noreferrer">Mobile App</a></li>
+                        <li><a href="https://github.com/KolegaTatar/SkyVision_desktop" target="_blank" rel="noopener noreferrer">Desktop App</a></li>
+                        <li><a href="https://www.figma.com/proto/VAEeMmg1rGRkZhTuEwuFnK/Platforma-do-Planowania-Podr%C3%B3%C5%BCy-i-Rezerwacji-TerraQuest?node-id=0-1&p=f&t=tY3MevuZcr4uMUzy-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=354%3A3719&show-proto-sidebar=1" target="_blank" rel="noopener noreferrer">Project</a></li>
                     </ul>
                 </div>
 
@@ -56,10 +56,10 @@ const Footer = () => {
                 >
                     <p className="footer_p">Informacje ogólne</p>
                     <ul>
-                        <li><a href="/about">O TerraQuest</a></li>
-                        <li><a href="/help">Pomoc</a></li>
-                        <li><a href="/privacypolicies">Polityka Prywatności</a></li>
-                        <li><a href="/user">Moje konto</a></li>
+                        <li><Link to="/about">O TerraQuest</Link></li>
+                        <li><Link to="/help">Pomoc</Link></li>
+                        <li><Link to="/privacypolicies">Polityka Prywatności</Link></li>
+                        <li><Link to="/user">Moje konto</Link></li>
                     </ul>
                 </div>
             </div>
