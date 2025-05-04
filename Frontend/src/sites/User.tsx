@@ -197,7 +197,7 @@ function User() {
 
         try {
             setShowConfirmAlert(false);
-            await axios.delete(`http://localhost:5000/api/bookings/${currentBookingToDelete}`, {
+            await axios.delete(`https://terraquest-backend.onrender.com/api/bookings/${currentBookingToDelete}`, {
                 withCredentials: true
             });
             setShowConfirmAlert(false);

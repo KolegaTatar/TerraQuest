@@ -30,7 +30,7 @@ const Alert: React.FC<AlertProps> = ({ title, onClose, onOk }) => {
         };
 
         try {
-            const response = await fetch("http://localhost:5000/api/auth/updateProfile", {
+            const response = await fetch("https://terraquest-backend.onrender.com//api/auth/updateProfile", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
