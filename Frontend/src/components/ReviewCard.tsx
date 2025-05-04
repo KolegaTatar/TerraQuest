@@ -38,7 +38,7 @@ const ReviewCard = ({ reviews }: ReviewCardComponentProps) => {
                         <h3>{review.title}</h3>
                         <p className="description">{review.description}</p>
                         <div className="reviewer">
-                            <img src={review.image} alt="example" />
+                            {/* <img src={review.image} alt="example" />  */}
                             <div>
                                 <p>{review.reviewer}</p>
                                 <span>{review.date}</span>
