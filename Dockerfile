@@ -1,20 +1,32 @@
-FROM node:18
+# Użyj oficjalnego obrazu Node.js
+FROM node:18 AS backend
 
-# 1. Instalacja zależności
-WORKDIR /app/backend
-COPY backend/package.json backend/package-lock.json ./
+# Ustawienie katalogu roboczego
+WORKDIR /app
 
-# Naprawa problemów z zależnościami
-RUN npm install -g npm@8.19.4 && \
-    npm install --omit=dev --legacy-peer-deps && \
-    npm install typescript@5.8.3 --save-dev
+# Kopiowanie plików package.json i package-lock.json
+COPY package*.json ./
 
-# 2. Kopiowanie kodu
+# Instalowanie wszystkich zależności w katalogu lokalnym
+RUN npm install --legacy-peer-deps
+
+# Kopiowanie pozostałych plików źródłowych do kontenera
 COPY . .
 
-# 3. Kompilacja TypeScript
-RUN npx tsc --project backend/tsconfig.json
+# Sprawdzenie wersji npm (można usunąć, jeśli nie jest to konieczne)
+RUN npm --version
 
-# 4. Uruchomienie
+# Sprawdzenie, czy vite jest dostępne (pomaga wykryć brakujące zależności)
+RUN npx vite --version
+
+# Sprawdzamy kompilację TypeScript przed uruchomieniem
+RUN npx tsc --noEmit
+
+# Uruchomienie kompilacji TypeScript
+RUN npm run build
+
+# Ustawienie portu 5000 (zdefiniowanego w backendzie)
 EXPOSE 5000
-CMD ["node", "backend/dist/main.js"]
+
+# Uruchomienie aplikacji
+CMD ["npm", "start"]
