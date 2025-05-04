@@ -10,6 +10,9 @@ COPY backend/package.json ./
 # Kopiowanie pliku package-lock.json z głównego katalogu projektu
 COPY package-lock.json ./
 
+# Aktualizacja npm do najnowszej wersji (np. 11.3.0)
+RUN npm install -g npm@11.3.0
+
 # Instalowanie wszystkich zależności
 RUN npm install --legacy-peer-deps
 
