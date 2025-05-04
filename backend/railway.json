@@ -2,7 +2,10 @@
   "build": {
     "builder": "nixpacks",
     "config": {
-      "startCommand": "npm run railway"
+      "nodeVersion": "18",
+      "installCommand": "npm install",
+      "buildCommand": "npm run build",
+      "startCommand": "npm start"
     }
   }
 }
