@@ -13,9 +13,8 @@ RUN npm install --legacy-peer-deps
 # Kopiowanie pozostałych plików źródłowych do kontenera
 COPY . .
 
-# Sprawdzenie wersji npm i vite (pomaga zweryfikować dostępność npm i vite)
+# Sprawdzenie wersji npm (opcjonalne)
 RUN npm --version
-RUN npx vite --version
 
 # Uruchomienie kompilacji TypeScript
 RUN echo "Uruchamianie kompilacji..." && npm run build
