@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const checkAuth = async (): Promise<boolean> => {
         try {
-            const response = await fetch('http://localhost:5000/api/auth/user', {
+            const response = await fetch('https://terraquest-production.up.railway.app/api/auth/user', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const logout = async () => {
         try {
-            await fetch('http://localhost:5000/api/auth/logout', {
+            await fetch('https://terraquest-production.up.railway.app/api/auth/logout', {
                 method: 'POST',
                 credentials: 'include'
             });
